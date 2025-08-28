@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SearchResults from '../components/SearchResults';
 import { Dataset, fetchDatasets } from '../services/datasetService';
+import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 const DatasetSearch: React.FC = () => {
-  const [datasets, setDatasets] = useState<Dataset[]>([]);
+  const navigate = useNavigate();
+  const { data: datasets = [] } = useQuery<Dataset[]>({ queryKey: ['datasets'], queryFn: fetchDatasets });
   const [query, setQuery] = useState('');
   const [status, setStatus] = useState('');
   const [tag, setTag] = useState('');
   const [page, setPage] = useState(0);
   const [sortField, setSortField] = useState<keyof Dataset>('name');
-
-  useEffect(() => {
-    fetchDatasets().then(setDatasets);
-  }, []);
 
   const tags = Array.from(new Set(datasets.flatMap(d => d.tags)));
 
@@ -59,6 +58,7 @@ const DatasetSearch: React.FC = () => {
         onPageChange={setPage}
         sortField={sortField}
         onSort={setSortField}
+        onRowClick={ds => navigate(`/dataset/${ds.id}`)}
       />
     </div>
   );

@@ -17,6 +17,7 @@ interface Props {
   onPageChange: (page: number) => void;
   sortField: keyof Dataset;
   onSort: (field: keyof Dataset) => void;
+  onRowClick?: (dataset: Dataset) => void;
 }
 
 const Table = styled.table`
@@ -33,7 +34,7 @@ const Pagination = styled.div`
   margin-top: 1rem;
 `;
 
-const SearchResults: React.FC<Props> = ({ data, page, pageSize, onPageChange, sortField, onSort }) => {
+const SearchResults: React.FC<Props> = ({ data, page, pageSize, onPageChange, sortField, onSort, onRowClick }) => {
   const start = page * pageSize;
   const paginated = data.slice(start, start + pageSize);
   const pages = Math.ceil(data.length / pageSize);
@@ -52,7 +53,7 @@ const SearchResults: React.FC<Props> = ({ data, page, pageSize, onPageChange, so
         </thead>
         <tbody>
           {paginated.map(ds => (
-            <tr key={ds.id}>
+            <tr key={ds.id} onClick={() => onRowClick?.(ds)} style={{ cursor: onRowClick ? 'pointer' : 'default' }}>
               <td>{ds.name}</td>
               <td>{ds.status}</td>
               <td>{ds.owner}</td>

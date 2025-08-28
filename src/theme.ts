@@ -1,9 +1,9 @@
 import { DefaultTheme } from 'styled-components';
 
-const theme: DefaultTheme = {
+export const lightTheme: DefaultTheme = {
   colors: {
-    primary: '#0018A8', // deep trust-evoking blue
-    accent: '#00A3E0', // bright accent blue
+    primary: '#0018A8',
+    accent: '#00A3E0',
     background: '#f5f7fa',
     text: '#000',
     white: '#ffffff'
@@ -11,4 +11,13 @@ const theme: DefaultTheme = {
   font: '"Helvetica Neue", Helvetica, Arial, sans-serif'
 };
 
-export default theme;
+export const darkTheme: DefaultTheme = {
+  colors: {
+    primary: '#0a0a0a',
+    accent: '#00A3E0',
+    background: '#1e1e1e',
+    text: '#fff',
+    white: '#2c2c2c'
+  },
+  font: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+};
