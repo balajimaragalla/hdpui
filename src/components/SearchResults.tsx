@@ -1,14 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface Dataset {
-  id: number;
-  name: string;
-  status: string;
-  owner: string;
-  tags: string[];
-  useCases: string[];
-}
+import { Dataset } from '../services/datasetService';
 
 interface Props {
   data: Dataset[];
