@@ -1,29 +1,46 @@
 import React, { useState } from 'react';
-import DatasetSearch from './components/DatasetSearch';
-import TenantOnboarding from './components/TenantOnboarding';
-import DatasetAccessRequest from './components/DatasetAccessRequest';
+import styled from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import Chatbot from './components/Chatbot';
+import DatasetSearch from './pages/DatasetSearch';
+import TenantOnboarding from './pages/TenantOnboarding';
+import DatasetAccessRequest from './pages/DatasetAccessRequest';
 
-type View = 'search' | 'onboard' | 'access' | 'chat';
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto 1fr;
+  }
+`;
+
+const Main = styled.main`
+  grid-row: 2 / -1;
+  padding: 1rem;
+`;
 
 const App: React.FC = () => {
-  const [view, setView] = useState<View>('search');
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
-    <>
-      <nav>
-        <button onClick={() => setView('search')}>Search Datasets</button>
-        <button onClick={() => setView('onboard')}>Onboard App</button>
-        <button onClick={() => setView('access')}>Request Access</button>
-        <button onClick={() => setView('chat')}>Chatbot</button>
-      </nav>
-      <main>
-        {view === 'search' && <DatasetSearch />}
-        {view === 'onboard' && <TenantOnboarding />}
-        {view === 'access' && <DatasetAccessRequest />}
-        {view === 'chat' && <Chatbot />}
-      </main>
-    </>
+    <Layout>
+      <Header onToggleChat={() => setChatOpen(o => !o)} />
+      <Sidebar />
+      <Main>
+        <Routes>
+          <Route path="/" element={<DatasetSearch />} />
+          <Route path="/onboarding" element={<TenantOnboarding />} />
+          <Route path="/access" element={<DatasetAccessRequest />} />
+        </Routes>
+      </Main>
+      <Chatbot open={chatOpen} onClose={() => setChatOpen(false)} />
+    </Layout>
   );
 };
 
