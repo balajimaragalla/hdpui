@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface Props {
   onToggleChat: () => void;
+  onToggleTheme: () => void;
 }
 
 const Bar = styled.header`
@@ -28,10 +29,13 @@ const ChatButton = styled.button`
   cursor: pointer;
 `;
 
-const Header: React.FC<Props> = ({ onToggleChat }) => (
+const Header: React.FC<Props> = ({ onToggleChat, onToggleTheme }) => (
   <Bar>
     <Title>Hybrid Data Platform</Title>
-    <ChatButton onClick={onToggleChat} aria-label="Toggle chatbot">Chat</ChatButton>
+    <div style={{ display: 'flex', gap: '0.5rem' }}>
+      <ChatButton onClick={onToggleTheme} aria-label="Toggle theme">🌓</ChatButton>
+      <ChatButton onClick={onToggleChat} aria-label="Toggle chatbot">Chat</ChatButton>
+    </div>
   </Bar>
 );
 
