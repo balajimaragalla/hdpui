@@ -126,7 +126,7 @@ Artefacts + Audit + Cost Records
 
 ## 7. Application Runtime: CARE + Hybrid Cloud
 
-Agents run as standard services on: - Kubernetes (cloud + onâprem) -
+Agents run as standard services on: - Kubernetes (cloud + on-prem) -
 Standard CI/CD pipelines - Managed secrets and IAM - Observability and
 runtime controls
 
@@ -158,9 +158,9 @@ MCP is preferred for reusable, discoverable capabilities.
 
 ------------------------------------------------------------------------
 
-## 10. Data Platforms (Central & Federated)
+## 10. Data Platforms (Domain specific & Federated application specific)
 
-Agents: - Do not bypass platforms - Inherit sourceâsystem entitlements -
+Agents: - Do not bypass platforms - Inherit source system entitlements -
 Access data only via governed interfaces
 
 ------------------------------------------------------------------------
@@ -212,9 +212,9 @@ UI captures intent and governance IDs only.
 
 ### Google ADK
 
--   Googleânative
+-   Google native
 -   Opinionated
--   Platformâled
+-   Platform led
 
 ### LangChain / LangGraph
 
@@ -241,8 +241,8 @@ centre
 ### DaS (JupyterHub)
 
 -   Prototyping only
--   Readâonly data
--   No production access
+-   Read only source system data
+-   Path to production
 
 ### IDEs
 
