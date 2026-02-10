@@ -139,7 +139,7 @@ Agents use **service identities**, never user identities.
 1.  Validate request and governance IDs\
 2.  Enforce policy, risk, and cost gates\
 3.  Generate structured execution plan\
-4.  Invoke allowâlisted tools\
+4.  Invoke allow listed tools\
 5.  Verify results and quality\
 6.  Persist artefacts, audit, and metrics
 
