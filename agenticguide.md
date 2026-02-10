@@ -136,11 +136,11 @@ Agents use **service identities**, never user identities.
 
 ## 8. Agent Control Loop
 
-1.  Validate request and governance IDs\
-2.  Enforce policy, risk, and cost gates\
-3.  Generate structured execution plan\
-4.  Invoke allow listed tools\
-5.  Verify results and quality\
+1.  Validate request and governance IDs
+2.  Enforce policy, risk, and cost gates
+3.  Generate structured execution plan
+4.  Invoke allow listed tools
+5.  Verify results and quality
 6.  Persist artefacts, audit, and metrics
 
 Planner, Executor, and Verifier **must be logically separated**.
@@ -284,11 +284,11 @@ Queryable via GET endpoints.
 
 ## 21. Non-Negotiable Principles
 
-1.  No agent without governance registration\
-2.  No direct data access\
-3.  Policy, risk, and cost enforced per call\
-4.  Business logic outside prompts\
-5.  Full auditability\
+1.  No agent without governance registration
+2.  No direct data access
+3.  Policy, risk, and cost enforced per call
+4.  Business logic outside prompts
+5.  Full auditability
 6.  Cost transparency
 
 ------------------------------------------------------------------------
