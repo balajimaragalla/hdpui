@@ -176,7 +176,7 @@ All decisions are logged.
 
 ## 12. Data Quality, Lineage, and Audit
 
-Agents: - Validate freshness and quality - Emit intentâlevel lineage -
+Agents: - Validate freshness and quality - Emit intent level lineage -
 Link outputs to datasets and tools
 
 ------------------------------------------------------------------------
@@ -201,7 +201,7 @@ Business logic never lives in prompts.
 
 ## 15. User Interaction Layer
 
-Invocation patterns: - Chat interfaces - Application UIs - Eventâdriven
+Invocation patterns: - Chat interfaces - Application UIs - Event driven
 workflows
 
 UI captures intent and governance IDs only.
@@ -275,7 +275,7 @@ Queryable via GET endpoints.
 -   Itonics registered
 -   AIOF approved
 -   Kannon registered
--   Tool allowâlists
+-   Tool allow lists
 -   Cost limits
 -   Approval workflows
 -   Monitoring enabled
