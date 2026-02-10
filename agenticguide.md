@@ -114,13 +114,13 @@ unrestricted access
 ## 6. Reference Architecture
 
 User / System\
-â UI / API\
-â Agent (CARE Runtime)\
-â Policy + Risk + Cost Gate\
-â MCP / API Tools\
-â Data Platforms / Knowledge Graph / Business Services\
-â Verification\
-â Artefacts + Audit + Cost Records
+UI / API\
+Agent (CARE Runtime)\
+Policy + Risk + Cost Gate\
+MCP / API Tools\
+Data Platforms / Knowledge Graph / Business Services\
+Verification\
+Artefacts + Audit + Cost Records
 
 ------------------------------------------------------------------------
 
