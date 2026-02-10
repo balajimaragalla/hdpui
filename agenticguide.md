@@ -1,6 +1,6 @@
 # Enterprise Agent Developer Guide
 
-## Unified, End-to-End Guidance for Building Governed Agentic AI on CARE, Hybrid Cloud, and Hybrid Data Platforms
+## Unified, End-to-End Guidance for Building Governed Agentic AI
 
 ------------------------------------------------------------------------
 
